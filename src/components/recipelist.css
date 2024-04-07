@@ -1,0 +1,91 @@
+.ingredients {
+    
+    padding: 24px 0;
+    border-bottom: 1px solid #CDC6B4;
+    justify-content: space-between;
+}
+.ingredients:last-child {
+    border-bottom: none;
+}
+
+.ingredient__box {
+    width: 100%;
+    padding: 0 20px;
+}
+
+.ingredient__box__inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+.recipe_editor {
+    display: none;
+}
+
+.dish_name {
+    display: none;
+}
+
+.toggle {
+    display: flex;
+}
+
+.checkbox {
+    -webkit-appearance: checkbox;
+    -moz-appearance: checkbox;
+    appearance: none;
+    display: inline-block;
+    margin: 0 20px;
+    width: 18px;
+    border: 2px solid #4B4739;
+    accent-color: #6E5D0E;
+    border-radius: 4px;
+    background-color: transparent;
+}
+
+.checkbox:checked {
+    -webkit-appearance: checkbox;
+    -moz-appearance: checkbox;
+    appearance: checkbox;
+    display: inline-block;
+    margin: 0 20px;
+    width: 18px;
+    border: none;
+    color:#1E1B13;
+    border-radius: 2px;
+    background-color: #6E5D0E;
+}
+
+.checkbox:hover {
+}
+
+.input__ingredients {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    max-width: 100%;
+}
+
+.recipe__list {
+    margin-top: 35px;
+    display: flex;
+    justify-content: center;
+}
+
+.recipe__box {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    width: 376px;
+    height: 100%;
+    background-color: #EEE7DA;
+    border-radius: 28px;
+    color: #1E1B13;
+}
+
+.recipe__box__tittle {
+    margin-top: 24px;
+}
+

@@ -1,0 +1,54 @@
+header {
+    padding: 3px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 54px;
+    background-color: #F4EDDF;
+    
+  
+}
+.logo {
+    font-size: 15px;
+}
+header button {
+    border: none;
+    cursor: pointer;
+    background-color: transparent;
+    font-family: var(--Poppins);
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+    
+
+}
+header a {
+    color: var(--title-color);
+    font-size: 14px;
+    font-family: var(--Poppins);
+    font-weight: 600;
+    text-transform: uppercase;
+    text-decoration: none;
+
+}
+.burger-button {
+    font-size: 23px;
+    display: none;
+}
+.user__icon{
+    font-size: 23px;
+}
+@media (max-width: 1000px) {
+    .logo {
+        font-size: 20px;
+    }
+    .links {
+        display: none;
+    }
+    .burger-button {
+        
+        display: block;
+        cursor: pointer;
+    }
+    
+}

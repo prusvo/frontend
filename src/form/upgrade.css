@@ -1,0 +1,23 @@
+.input__ingredients {
+    color: #0D0D0D;
+    font-family: "Poppins", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    text-decoration: underline;
+}
+.input__dish-name {
+
+    color: #0D0D0D;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+    font-size: 20px;
+
+    background-color: transparent;
+    border: none;
+    outline: none;
+    text-decoration: underline;
+}

@@ -1,0 +1,34 @@
+if (!recipe) {
+    return null;
+  }
+
+  return (
+    <li>
+      <strong>{recipe.dishName}</strong>
+      <ul>
+        {recipe.ingredients &&
+          recipe.ingredients.map((ingredient, i) => (
+            <li
+              className={open ? "ingredients" : "ingredients toggle"}
+              key={i}
+            >
+              {`${ingredient.amount} ${ingredient.unit}  ${ingredient.name}`}
+            </li>
+          ))}
+        <DeleteButton id={recipe._id} onDelete={() => onRecipeDeleted(recipe._id)} />
+        <button className='edit__button' onClick={toggle}>
+          <FaRegEdit />
+        </button>
+        <div className={!open ? "recipe_editor" : "recipe_editor toggle"}>
+          <RecipeEditor
+            recipeId={recipe._id}
+            initialDishName={recipe.dishName}
+            initialIngredients={recipe.ingredients}
+            onUpdate={onUpdate}
+            onDelete={() => onRecipeDeleted(recipe._id)}
+          />
+        </div>
+      </ul>
+    </li>
+  );
+};
