@@ -10,7 +10,7 @@ const RecipeEditor = ({ recipeId, initialDishName, initialIngredients }) => {
     try {
         console.log('Sending data to server:', { _id: recipeId, newDishName, newIngredients })
         
-      const response = await fetch('http://localhost:5001/recipe/update', {
+      const response = await fetch('http://3.68.98.122:5001/recipe/update', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -31,7 +31,7 @@ const RecipeEditor = ({ recipeId, initialDishName, initialIngredients }) => {
 
   const handleAddIngredient = async () => {
     try {
-      const response = await fetch('http://localhost:5001/recipe/addIngredient', {
+      const response = await fetch('http://3.68.98.122:5001/recipe/addIngredient', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
