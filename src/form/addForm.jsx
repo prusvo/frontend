@@ -14,7 +14,7 @@ const RecipeForm = () => {
       
   
       try {
-        const response = await fetch('http://localhost:5000/recipe/add', {
+        const response = await fetch('http://localhost:5001/recipe/add', {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

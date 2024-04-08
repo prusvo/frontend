@@ -16,7 +16,7 @@ const Header = () => {
 
     
     useEffect(() => {
-        axios.get('http://localhost:5000/auth/verify')
+        axios.get('http://localhost:5001/auth/verify')
         .then(res => {
             if(res.data.status) {
                 
@@ -30,7 +30,7 @@ const Header = () => {
     },[navigateCallback])
 
     const handleLogout = () => {
-        axios.get('http://localhost:5000/auth/logout')
+        axios.get('http://localhost:5001/auth/logout')
         .then(res => {
             if(res.data.status) {
                 navigate('/auth')

@@ -13,7 +13,7 @@ const SearchRecipes = () => {
   const handleSearch = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`http://localhost:5000/recipe/search?query=${query}`);
+      const response = await axios.get(`http://localhost:5001/recipe/search?query=${query}`);
       setRecipes(response.data);
       setLoading(false);
       setSearched(true); // Встановлюємо, що пошук виконаний
