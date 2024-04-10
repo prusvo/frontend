@@ -12,7 +12,7 @@ const BurgerMenu = () => {
         setOpen(!open)
     }
     const handleLogout = () => {
-        axios.get('http://3.68.98.122:5001/auth/logout')
+        axios.get('http://18.153.66.100:5001/auth/logout')
         .then(res => {
             if(res.data.status) {
                 navigate('/auth')

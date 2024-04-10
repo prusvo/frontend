@@ -6,7 +6,7 @@ const RegistrationForm = () => {
 
   const handleRegistration = async () => {
     try {
-      const response = await fetch('http://3.68.98.122:5001/auth/registration', {
+      const response = await fetch('http://18.153.66.100:5001/auth/registration', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
