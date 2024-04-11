@@ -61,7 +61,7 @@ const RecipeForm = ({ onRecipeAdded }) => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://18.153.66.100:5001/recipe/add', {
+      const response = await fetch('http://localhost:5001/recipe/add', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

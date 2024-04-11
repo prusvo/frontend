@@ -9,7 +9,7 @@ const AddandShowRecipe = () => {
   
   const [admin, setAdmin] = useState(false)
   useEffect(() => {
-    Axios.get('http://18.153.66.100:5001/auth/get_token')
+    Axios.get('http://localhost:5001/auth/get_token')
       .then(response => {
         
         checkAdmin(response.data.token);
@@ -21,7 +21,7 @@ const AddandShowRecipe = () => {
   
   const checkAdmin = async (token) => {
     try {
-      const response = await Axios.get('http://18.153.66.100:5001/auth/admin_panel', {
+      const response = await Axios.get('http://localhost:5001/auth/admin_panel', {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,
@@ -48,7 +48,7 @@ const AddandShowRecipe = () => {
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
-        const response = await fetch('http://18.153.66.100:5001/recipe/menu', {
+        const response = await fetch('http://localhost:5001/recipe/menu', {
           method: 'GET',
           headers: { 
             'Content-Type': 'application/json',
@@ -77,7 +77,7 @@ const AddandShowRecipe = () => {
 
   const handleRecipeDeleted = async (recipeId) => {
     try {
-      const response = await fetch(`http://18.153.66.100:5001/recipe/delete/${recipeId}`, {
+      const response = await fetch(`http://localhost:5001/recipe/delete/${recipeId}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

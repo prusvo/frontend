@@ -28,7 +28,7 @@ const RecipeEditor = ({ recipeId, initialDishName, initialIngredients }) => {
   const [token, setToken] = useState(" ");
 
   useEffect(() => {
-    Axios.get('http://18.153.66.100:5001/auth/get_token')
+    Axios.get('http://localhost:5001/auth/get_token')
       .then(response => {
         setToken(response.data.token);
       })
@@ -41,7 +41,7 @@ const RecipeEditor = ({ recipeId, initialDishName, initialIngredients }) => {
     try {
       console.log('Sending data to server:', { _id: recipeId, newDishName, newIngredients })
 
-      const response = await fetch('http://18.153.66.100:5001/recipe/update', {
+      const response = await fetch('http://localhost:5001/recipe/update', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -63,7 +63,7 @@ const RecipeEditor = ({ recipeId, initialDishName, initialIngredients }) => {
 
   const handleAddIngredient = async () => {
     try {
-      const response = await fetch('http://18.153.66.100:5001/recipe/addIngredient', {
+      const response = await fetch('http://localhost:5001/recipe/addIngredient', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -92,7 +92,7 @@ const RecipeEditor = ({ recipeId, initialDishName, initialIngredients }) => {
   const handleDeleteIngredient = async (ingredientId) => {
     try {
       // Виклик серверного маршруту для видалення інгредієнта
-      const response = await fetch(`http://18.153.66.100:5001/recipe/deleteIngredient/${recipeId}/${ingredientId}`, {
+      const response = await fetch(`http://localhost:5001/recipe/deleteIngredient/${recipeId}/${ingredientId}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
