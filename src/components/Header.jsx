@@ -16,7 +16,7 @@ const Header = () => {
 
     
     useEffect(() => {
-        axios.get('http://18.185.2.123:5001/auth/verify')
+        axios.get('http://3.71.202.234:5001/auth/verify')
         .then(res => {
             if(res.data.status) {
                 
