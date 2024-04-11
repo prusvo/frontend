@@ -9,7 +9,7 @@ const AddandShowRecipe = () => {
   
   const [admin, setAdmin] = useState(false)
   useEffect(() => {
-    Axios.get('http://localhost:5001/auth/get_token')
+    Axios.get('http://3.71.202.234:5001/auth/get_token')
       .then(response => {
         
         checkAdmin(response.data.token);
@@ -21,7 +21,7 @@ const AddandShowRecipe = () => {
   
   const checkAdmin = async (token) => {
     try {
-      const response = await Axios.get('http://localhost:5001/auth/admin_panel', {
+      const response = await Axios.get('http://3.71.202.234:5001/auth/admin_panel', {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,
