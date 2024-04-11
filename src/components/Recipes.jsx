@@ -48,7 +48,7 @@ const AddandShowRecipe = () => {
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
-        const response = await fetch('http://localhost:5001/recipe/menu', {
+        const response = await fetch('http://3.71.202.234:5001/recipe/menu', {
           method: 'GET',
           headers: { 
             'Content-Type': 'application/json',
