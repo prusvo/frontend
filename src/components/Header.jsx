@@ -16,7 +16,7 @@ const Header = () => {
 
     
     useEffect(() => {
-        axios.get('http://localhost:5001//auth/verify')
+        axios.get('http://localhost:5001/auth/verify')
         .then(res => {
             if(res.data.status) {
                 
