@@ -77,7 +77,7 @@ const AddandShowRecipe = () => {
 
   const handleRecipeDeleted = async (recipeId) => {
     try {
-      const response = await fetch(`http://localhost:5001/recipe/delete/${recipeId}`, {
+      const response = await fetch(`http://3.71.202.234:5001/recipe/delete/${recipeId}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',
