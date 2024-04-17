@@ -3,13 +3,14 @@ import AddRecipeForm from '../form/AddRecipeForm';
 import RecipeListAdmin from './RecipeList__ADMIN';
 import RecipeListUser from './RecipeList__USER';
 import Axios from 'axios';
+import URL from '../url';
 const AddandShowRecipe = () => {
   const [recipes, setRecipes] = useState([]);
 
   
   const [admin, setAdmin] = useState(false)
   useEffect(() => {
-    Axios.get('http://3.71.202.234:5001/auth/get_token')
+    Axios.get(`http://${URL.code}:5001/auth/get_token`)
       .then(response => {
         
         checkAdmin(response.data.token);
@@ -21,7 +22,7 @@ const AddandShowRecipe = () => {
   
   const checkAdmin = async (token) => {
     try {
-      const response = await Axios.get('http://3.71.202.234:5001/auth/admin_panel', {
+      const response = await Axios.get(`http://${URL.code}:5001/auth/admin_panel`, {
         headers: {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,
@@ -48,7 +49,7 @@ const AddandShowRecipe = () => {
   useEffect(() => {
     const fetchRecipes = async () => {
       try {
-        const response = await fetch('http://3.71.202.234:5001/recipe/menu', {
+        const response = await fetch(`http://${URL.code}:5001/recipe/menu`, {
           method: 'GET',
           headers: { 
             'Content-Type': 'application/json',
@@ -77,7 +78,7 @@ const AddandShowRecipe = () => {
 
   const handleRecipeDeleted = async (recipeId) => {
     try {
-      const response = await fetch(`http://3.71.202.234:5001/recipe/delete/${recipeId}`, {
+      const response = await fetch(`http://${URL.code}:5001/recipe/delete/${recipeId}`, {
         method: 'DELETE',
         headers: {
           'Content-Type': 'application/json',

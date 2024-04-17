@@ -3,6 +3,7 @@ import axios from 'axios'
 import {Link, useNavigate} from 'react-router-dom'
 import './header.css'
 import { FaUserCircle } from "react-icons/fa";
+import URL from "../url.jsx";
 
 import BurgerMenu from './BurgerMenu.jsx'
 
@@ -16,7 +17,7 @@ const Header = () => {
 
     
     useEffect(() => {
-        axios.get('http://3.71.202.234:5001/auth/verify')
+        axios.get(`http://${URL.code}:5001/auth/verify`)
         .then(res => {
             if(res.data.status) {
                 
@@ -30,7 +31,7 @@ const Header = () => {
     },[navigateCallback])
 
     const handleLogout = () => {
-        axios.get('http://3.71.202.234:5001/auth/logout')
+        axios.get(`http://${URL.code}:5001/auth/logout`)
         .then(res => {
             if(res.data.status) {
                 navigate('/auth')

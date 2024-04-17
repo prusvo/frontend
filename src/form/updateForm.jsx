@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import './upgrade.css'
+import URL from '../url';
 
 const RecipeEditor = ({ recipeId, initialDishName, initialIngredients }) => {
   const [newDishName, setNewDishName] = useState(initialDishName);
@@ -10,7 +11,7 @@ const RecipeEditor = ({ recipeId, initialDishName, initialIngredients }) => {
     try {
         console.log('Sending data to server:', { _id: recipeId, newDishName, newIngredients })
         
-      const response = await fetch('http://3.71.202.234:5001/recipe/update', {
+      const response = await fetch(`http://${URL.code}:5001/recipe/update`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -31,7 +32,7 @@ const RecipeEditor = ({ recipeId, initialDishName, initialIngredients }) => {
 
   const handleAddIngredient = async () => {
     try {
-      const response = await fetch('http://3.71.202.234:5001/recipe/addIngredient', {
+      const response = await fetch(`http://${URL.code}:5001/recipe/addIngredient`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

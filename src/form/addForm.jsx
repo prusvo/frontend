@@ -1,4 +1,5 @@
 import { useState } from "react"
+import URL from "../url";
 
 
 
@@ -14,7 +15,7 @@ const RecipeForm = () => {
       
   
       try {
-        const response = await fetch('http://3.71.202.234:5001/recipe/add', {
+        const response = await fetch(`${URL.code}:5001/recipe/add`, {
           method: 'POST',
           headers: {
             'Content-Type': 'application/json',

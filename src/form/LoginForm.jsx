@@ -1,6 +1,7 @@
 import React, {  useState } from 'react';
 import Axios from 'axios'
 import { useNavigate } from 'react-router-dom';
+import URL from '../url';
 
 const LoginForm = () => {
   const [userName, setUserName] = useState('');
@@ -14,7 +15,7 @@ Axios.defaults.withCredentials= true
 const handleSubmit = (e) => {
   
     e.preventDefault()
-    Axios.post('http://3.71.202.234:5001/auth/login', {
+    Axios.post(`http://${URL.code}:5001/auth/login`, {
         userName,
         password
     }).then(response => {

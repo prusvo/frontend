@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import URL from '../url';
 
 const DropdownExample = ({ selectedOption, onSelectChange }) => {
   
@@ -61,7 +62,7 @@ const RecipeForm = ({ onRecipeAdded }) => {
     e.preventDefault();
 
     try {
-      const response = await fetch('http://3.71.202.234:5001/recipe/add', {
+      const response = await fetch(`http://${URL.code}:5001/recipe/add`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',

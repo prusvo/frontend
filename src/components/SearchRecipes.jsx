@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import './search.css';
 import { IoSearchOutline } from "react-icons/io5";
+import URL from '../url';
 
 const SearchRecipes = () => {
   const [query, setQuery] = useState('');
@@ -13,7 +14,7 @@ const SearchRecipes = () => {
   const handleSearch = async () => {
     try {
       setLoading(true);
-      const response = await axios.get(`http://3.71.202.234:5001/recipe/search?query=${query}`);
+      const response = await axios.get(`http://${URL.code}:5001/recipe/search?query=${query}`);
       setRecipes(response.data);
       setLoading(false);
       setSearched(true); // Встановлюємо, що пошук виконаний

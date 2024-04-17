@@ -1,9 +1,10 @@
 
 import React from 'react';
+import URL from '../url';
 
 const deleteRecipe = async (id) => {
   try {
-    const response = await fetch('http://3.71.202.234:5001/recipe/delete', {
+    const response = await fetch(`http://${URL.code}:5001/recipe/delete`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
