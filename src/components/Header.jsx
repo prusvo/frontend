@@ -13,14 +13,14 @@ const Header = () => {
     axios.defaults.withCredentials = true
     
     
-  
+    
 
     
     useEffect(() => {
         axios.get(`http://${URL.code}:5001/auth/verify`)
         .then(res => {
             if(res.data.status) {
-                
+                console.log(res.data.status)
             } else {
                 navigateCallback()
             }
@@ -34,6 +34,7 @@ const Header = () => {
         axios.get(`http://${URL.code}:5001/auth/logout`)
         .then(res => {
             if(res.data.status) {
+                
                 navigate('/auth')
             }
         }).catch(err =>{

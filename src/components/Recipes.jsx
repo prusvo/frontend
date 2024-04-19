@@ -10,14 +10,15 @@ const AddandShowRecipe = () => {
   
   const [admin, setAdmin] = useState(false)
   useEffect(() => {
-    Axios.get(`http://${URL.code}:5001/auth/get_token`)
-      .then(response => {
-        
-        checkAdmin(response.data.token);
-      })
-      .catch(error => {
-        console.log('Error fetching token:', error);
-      });
+    Axios.get(`http://${URL.code}:5001/auth/get_token`, { withCredentials: true }) 
+  .then(response => {
+    checkAdmin(response.data.token);
+    console.log(response.data.token)
+  })
+  .catch(error => {
+    console.log('Error fetching token:', error);
+  });
+
   }, []);
   
   const checkAdmin = async (token) => {
@@ -27,6 +28,7 @@ const AddandShowRecipe = () => {
           'Content-Type': 'application/json',
           Authorization: `Bearer ${token}`,
         },
+        withCredentials: true, 
       });
 
       if (response.status === 200) {
@@ -35,13 +37,11 @@ const AddandShowRecipe = () => {
       } else {
         setAdmin(false);
         console.log('You are USER or an error occurred');
-        // Perform additional actions or show a message to the user
       }
     } catch (err) {
       console.log('Error checking admin status:', err);
     }
   };
-      
         
       
       

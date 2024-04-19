@@ -19,11 +19,10 @@ const handleSubmit = (e) => {
         userName,
         password
     }).then(response => {
-
-      
         if(response.data.token) {
             navigate('/')
-            console.log(response.data.token)
+            
+
         }
         
     }).catch(err => {
@@ -44,7 +43,7 @@ const handleSubmit = (e) => {
       
       <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Password'/>
 
-      <button onClick={handleSubmit}>Sign In</button>
+      <button onClick={  handleSubmit}>Sign In</button>
     </div>
   );
 };
