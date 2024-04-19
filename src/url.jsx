@@ -1,5 +1,5 @@
 const URL = {
-    code: "localhost"
+    code: "18.192.42.252"
 }
 
 export default URL
