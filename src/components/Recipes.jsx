@@ -9,39 +9,92 @@ const AddandShowRecipe = () => {
 
   
   const [admin, setAdmin] = useState(false)
-  useEffect(() => {
-    Axios.get(`http://${URL.code}:5001/auth/get_token`, { withCredentials: true }) 
-  .then(response => {
-    checkAdmin(response.data.token);
-    console.log(response.data.token)
-  })
-  .catch(error => {
-    console.log('Error fetching token:', error);
-  });
+  // const [isAdmin, setIsAdmin] = useState(false);
 
+  useEffect(() => {
+    const checkAdmin = async () => {
+      try {
+        const token = localStorage.getItem('token');
+        if (!token) {
+          console.log('Token not found');
+          return;
+        }
+  
+        const response = await Axios.get(`http://${URL.code}:5001/auth/admin_panel`, {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+          withCredentials: true,
+        });
+  
+        if (response.status === 200) {
+          setAdmin(true);
+        } else {
+          setAdmin(false);
+        }
+      } catch (error) {
+        // Помилка не виводиться
+      }
+    };
+  
+    checkAdmin();
   }, []);
   
-  const checkAdmin = async (token) => {
-    try {
-      const response = await Axios.get(`http://${URL.code}:5001/auth/admin_panel`, {
-        headers: {
-          'Content-Type': 'application/json',
-          Authorization: `Bearer ${token}`,
-        },
-        withCredentials: true, 
-      });
+  // useEffect(() => {
+  //   Axios.get(`http://${URL.code}:5001/auth/get_token`, { withCredentials: true }) 
+  // .then(response => {
+  //   checkAdmin(response.data.token);
+  //   console.log(response.data.token)
+  // })
+  // .catch(error => {
+  //   console.log('Error fetching token:', error);
+  // });
 
-      if (response.status === 200) {
-        setAdmin(true);
-        console.log('You are ADMIN');
-      } else {
-        setAdmin(false);
-        console.log('You are USER or an error occurred');
-      }
-    } catch (err) {
-      console.log('Error checking admin status:', err);
-    }
-  };
+  // }, []);
+  // useEffect(() => {
+  //   try {
+  //     const token = localStorage.getItem('token')
+  //     console.log(token)
+  //     // checkAdmin(token)
+
+  //   } catch (error) {
+  //     console.log("token is not fined")
+  //   }
+    
+ 
+
+  // }, []);
+  
+//   const checkAdmin = async (token) => {
+//     try {
+//         const response = await Axios.get(`http://${URL.code}:5001/auth/admin_panel`, {
+//             headers: {
+//                 'Content-Type': 'application/json',
+//                 Authorization: `Bearer ${token}`,
+//             },
+//             withCredentials: true, 
+//         });
+
+//         if (response.status === 200) {
+//             setAdmin(true);
+//             console.log('You are ADMIN');
+//         } else {
+//             setAdmin(false);
+//             console.log('You are USER or an error occurred');
+//         }
+//     } catch (err) {
+//         if (err.response && (err.response.status === 401 || err.response.status === 403)) {
+//             // Помилка 401 або 403 означає, що користувач не є адміністратором
+//             setAdmin(false);
+//             console.log('You are USER');
+//         } else {
+//             // Інші помилки
+//             console.log('Error checking admin status:', err);
+//         }
+//     } 
+// };
+
+  
         
       
       

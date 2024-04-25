@@ -16,6 +16,7 @@ const BurgerMenu = () => {
         axios.get(`http://${URL.code}:5001/auth/logout`)
         .then(res => {
             if(res.data.status) {
+                localStorage.removeItem('token')
                 navigate('/auth')
             }
         }).catch(err =>{

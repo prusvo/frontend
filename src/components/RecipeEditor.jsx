@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import Axios from 'axios';
+
 import URL from '../url';
 
 const DropdownExample = ({ selectedOption, onSelectChange }) => {
@@ -28,15 +28,26 @@ const RecipeEditor = ({ recipeId, initialDishName, initialIngredients }) => {
   });
   const [token, setToken] = useState(" ");
 
+  // useEffect(() => {
+  //   Axios.get(`http://${URL.code}:5001/auth/get_token`)
+  //     .then(response => {
+  //       setToken(response.data.token);
+  //     })
+  //     .catch(error => {
+  //       console.log('Error fetching token:', error);
+  //     });
+  // }, []);
   useEffect(() => {
-    Axios.get(`http://${URL.code}:5001/auth/get_token`)
-      .then(response => {
-        setToken(response.data.token);
-      })
-      .catch(error => {
-        console.log('Error fetching token:', error);
-      });
+    try {
+      const token = localStorage.getItem('token')
+      setToken(token);
+    } catch (error) {
+      console.log(error)
+    }
+        
+      
   }, []);
+
 
   const handleUpdateRecipe = async () => {
     try {

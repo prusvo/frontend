@@ -16,31 +16,44 @@ const Header = () => {
     
 
     
+    // useEffect(() => {
+    //     axios.get(`http://${URL.code}:5001/auth/acc`)
+    //     .then(res => {
+    //         if(res.data.status) {
+    //             console.log(res.data.status)
+    //         } else {
+    //             navigateCallback()
+    //         }
+    //         console.log(res)
+    //     }).catch(error => {
+    //         console.log(error, 'Verify error')
+    //     })
+    // },[navigateCallback])
     useEffect(() => {
-        axios.get(`http://${URL.code}:5001/auth/verify`)
-        .then(res => {
-            if(res.data.status) {
-                console.log(res.data.status)
-            } else {
+        try {
+            const token = localStorage.getItem('token')
+            if (!token) {
                 navigateCallback()
+            } else {
+                console.log('User is Verify')
             }
-            console.log(res)
-        }).catch(error => {
-            console.log(error, 'Verify error')
-        })
-    },[navigateCallback])
+        } catch (error) {
+            console.log('User is no Verify')
+        }
+    }, [navigateCallback])
 
     const handleLogout = () => {
         axios.get(`http://${URL.code}:5001/auth/logout`)
         .then(res => {
             if(res.data.status) {
-                
+                localStorage.removeItem('token')
                 navigate('/auth')
             }
         }).catch(err =>{
             console.log(err)
         })
     }
+   
    
       
     return (

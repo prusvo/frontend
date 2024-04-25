@@ -20,8 +20,11 @@ const handleSubmit = (e) => {
         password
     }).then(response => {
         if(response.data.token) {
+          localStorage.setItem('token', response.data.token)
             navigate('/')
-            
+          setTimeout(() => {
+            localStorage.removeItem('token')
+          }, 3600000)
 
         }
         
