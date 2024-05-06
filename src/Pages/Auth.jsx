@@ -8,7 +8,7 @@ const [switchBtn, setSwitchBtn] = useState(true)
     setSwitchBtn(!switchBtn)
   }
   const handleRegistrationSuccess = () => {
-    // Після успішної реєстрації перехід до форми входу
+  
     setSwitchBtn(true);
   };
   

@@ -18,7 +18,7 @@ const RegistrationForm = ({ onRegistrationSuccess }) => {
 
       if (response.ok) {
         const result = await response.json();
-        console.log(result.message); // Registration successful
+        console.log(result.message); 
         onRegistrationSuccess();
       } else {
         const error = await response.json();
