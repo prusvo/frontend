@@ -2,6 +2,7 @@
 import React from 'react';
 import URL from '../url';
 
+
 const deleteRecipe = async (id) => {
   try {
     const response = await fetch(`http://${URL.code}:5001/recipe/delete`, {
@@ -18,6 +19,7 @@ const deleteRecipe = async (id) => {
 
     const data = await response.json();
     console.log('Data deleted:', data);
+    window.location.reload();
     // Additional processing after deleting data
   } catch (error) {
     console.error('Error deleting data:', error);
@@ -27,7 +29,7 @@ const deleteRecipe = async (id) => {
 
 function DeleteButton({ id }) {
   return (
-    <button onClick={() => deleteRecipe(id)}>Видалити рецепт</button>
+    <button className='recipe__box__button' onClick={() => deleteRecipe(id)}>Yes</button>
   );
 }
 

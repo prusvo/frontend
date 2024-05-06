@@ -7,12 +7,16 @@ const [switchBtn, setSwitchBtn] = useState(true)
   const swichButton = () => {
     setSwitchBtn(!switchBtn)
   }
+  const handleRegistrationSuccess = () => {
+    // Після успішної реєстрації перехід до форми входу
+    setSwitchBtn(true);
+  };
   
     return (
 <div className="Auth">
 <div className="auth__box">
     <div className={switchBtn ? "register__form " : "register__form active"}>
-        <RegistrationForm/>
+    <RegistrationForm onRegistrationSuccess={handleRegistrationSuccess} />
         <p>Already have an account <button onClick={() => swichButton()} className="register__switch">Login</button>.</p>
     </div>
     <div className={switchBtn ? "login__form active" : "login__form"}>

@@ -64,7 +64,7 @@ const Header = () => {
                     <div><h1 className="logo">Recipees.net</h1></div>
                     <div className="links">
                     <Link to="/">Home</Link>
-                    <Link to="/dashboard">Dashboard</Link>
+                    <Link to="/search">Search</Link>
                     <button onClick={handleLogout}>logout</button>
                     </div>
                     <div className="user__icon"><FaUserCircle/></div>

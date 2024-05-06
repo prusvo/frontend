@@ -141,6 +141,11 @@
 .active {
     display: flex;
 }
+.error__login {
+    text-align: center;
+    font-size: 15px;
+    color: #f33c33;
+}
 
 
 

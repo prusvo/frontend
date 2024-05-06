@@ -4,7 +4,7 @@ import './App.css';
 
 import Auth from './Pages/Auth';
 import Home from './Pages/Home';
-import Dashboard from './components/Dashboard'
+
 import Search from './Pages/Search';
 
 
@@ -22,7 +22,6 @@ function App() {
         
         <Route path='/' element={<Home/>}/>
         <Route path='/auth' element={<Auth/>}/>
-        <Route path='/dashboard' element={<Dashboard/>}/>
         <Route path='/search' element={<Search/>}/>
    
         

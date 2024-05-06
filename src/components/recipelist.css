@@ -1,5 +1,5 @@
 .ingredients {
-    
+    font-family: "Montserrat", sans-serif;;
     padding: 24px 0;
     border-bottom: 1px solid #CDC6B4;
     justify-content: space-between;
@@ -9,6 +9,7 @@
 }
 
 .ingredient__box {
+    display: block;
     width: 100%;
     padding: 0 20px;
 }
@@ -30,6 +31,9 @@
 .toggle {
     display: flex;
 }
+.close {
+    display: none;
+}
 
 .checkbox {
     -webkit-appearance: checkbox;
@@ -38,6 +42,7 @@
     display: inline-block;
     margin: 0 20px;
     width: 18px;
+    height: 18px;
     border: 2px solid #4B4739;
     accent-color: #6E5D0E;
     border-radius: 4px;
@@ -51,6 +56,7 @@
     display: inline-block;
     margin: 0 20px;
     width: 18px;
+    height: 18px;
     border: none;
     color:#1E1B13;
     border-radius: 2px;
@@ -68,12 +74,16 @@
 }
 
 .recipe__list {
-    margin-top: 35px;
+    margin: 35px 0;
+    
     display: flex;
     justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 30px;
 }
 
-.recipe__box {
+.box {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -84,8 +94,29 @@
     border-radius: 28px;
     color: #1E1B13;
 }
-
 .recipe__box__tittle {
-    margin-top: 24px;
+    margin: 30px;
 }
 
+
+
+.recipe__box__buttons button{
+   background-color: none;
+}
+
+
+@media (max-width: 1000px) {
+    .checkbox {
+        margin: 0 20px;
+        width: 30px;
+        height: 30px;
+      
+    }
+    .checkbox:checked {
+        
+        width: 30px;
+        height: 30px;
+        
+    }
+    
+}

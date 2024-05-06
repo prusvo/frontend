@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import AddRecipeForm from '../form/AddRecipeForm';
 import RecipeListAdmin from './RecipeList__ADMIN';
 import RecipeListUser from './RecipeList__USER';
+import { GoPlus } from "react-icons/go";
+import { IoClose } from "react-icons/io5";
 import Axios from 'axios';
 import URL from '../url';
 const AddandShowRecipe = () => {
@@ -9,6 +11,7 @@ const AddandShowRecipe = () => {
 
   
   const [admin, setAdmin] = useState(false)
+  const [open, setOpen] = useState(false)
   // const [isAdmin, setIsAdmin] = useState(false);
 
   useEffect(() => {
@@ -156,12 +159,20 @@ const AddandShowRecipe = () => {
       prevRecipes.map((recipe) => (recipe._id === updatedRecipe._id ? updatedRecipe : recipe))
     );
   };
+  
 
+  const openForm = () => {
+    setOpen(!open)
+  }
   
   if(admin) {
     return (
-      <div><h2>you are Admin</h2>
+      <div>
+        <div className={ !open ? "AddForm close" : "AddForm"}>
+          
         <AddRecipeForm onRecipeAdded={handleRecipeAdded}/>
+        </div>
+        <button onClick={openForm} className='addform__button'>{!open?<GoPlus/>:<IoClose/>}</button>
         <RecipeListAdmin
           recipes={recipes}
           

@@ -5,6 +5,7 @@ header {
     align-items: center;
     height: 54px;
     background-color: #F4EDDF;
+
     
   
 }
@@ -37,6 +38,9 @@ header a {
 }
 .user__icon{
     font-size: 23px;
+}
+.links a{
+    margin-right: 25px;
 }
 @media (max-width: 1000px) {
     .logo {

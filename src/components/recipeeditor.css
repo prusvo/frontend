@@ -1,0 +1,181 @@
+.recipe__editor {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+}
+.editor__box {
+    
+    display: flex;
+    align-items: center;
+}
+.editor__box:first-child {
+    margin-top: 10px;
+}
+.editor__box input {
+    margin: 15px 0;
+    margin-left: 5px;
+    border: none;
+    outline: none;
+    font-family: "Montserrat", sans-serif;
+    font-size: 15px;
+    
+}
+.editor__box input:first-child {
+    margin-left: 0;
+}
+
+.input__dish-name {
+    margin-top: 30px;
+
+    padding: 5px ;
+    border-radius: 8px;
+    
+    color: #0D0D0D;
+    font-family: "Poppins", sans-serif;
+    font-weight: 600;
+    font-style: normal;
+   
+    font-size: 20px;
+    text-align: center;
+    border: none;
+    outline: none;
+
+    width: 150px;
+    height: 26px;
+
+    text-decoration: underline;
+}
+.input__ingredient {
+    
+    padding: 5px ;
+    border-radius: 8px;
+    width: 150px;
+    text-decoration: underline;
+}
+.input__number {
+    padding: 5px ;
+    width: 70px;
+    border-radius: 8px;
+    background-color: #FFEFD2;
+    text-align: center;
+}
+.button__editor {
+    display: flex;
+    background-color: var(--yelow-color);
+    padding: 10px;
+    border-radius: 8px;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    margin-left: 10px;
+    color: black;
+}
+.button__editor:hover {
+    background-color: #ecd273;
+}
+.dropdown {
+    border: none;
+    padding: 5px;
+    border-radius: 8px;
+    margin-left: 5px;
+    
+    outline: none;
+    font-size: 15px;
+    width: 80px;
+    color: #0D0D0D;
+
+    cursor: pointer;
+}
+
+.buttons__editor {
+    margin: 35px 0;
+    display: flex;
+    justify-content: right;
+    width: 100%;
+    
+}
+.buttons__editor button{
+    padding: 10px;
+    border-radius: 18px;
+    box-shadow: 0px 1px 3px #6E5D0E;
+    
+    margin-right: 10px;
+    font-size: 18px;
+    color: #6E5D0E;
+    border: none;
+    background-color: #FAF3E5;
+
+    cursor: pointer;
+    position: relative;
+    transition: all .2s linear;
+
+    
+}
+.buttons__editor button:hover {
+    top: -2px;
+    text-decoration: underline;
+}
+
+.addform__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--yelow-color);
+    font-size: 60px;
+    background-color: #544600;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    z-index: 2;
+    
+}
+.acceptForm {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    border-radius: 18px;
+    border: 2px solid #FF8981;
+
+    position: fixed;
+    top: 30%;
+    
+    width: 350px;
+    height: 150px;
+    background-color: #FFDAD7;
+    z-index: 2;
+
+    backdrop-filter: blur(10px);
+}
+.acceptForm button{
+    background-color: #C5ECCE ;
+    border: none;
+    margin: 20px;
+    width: 100px;
+    height: 32px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color .2s linear;
+}
+.acceptForm button:hover {
+    background-color: #9dbda5;
+}
+.overlay {
+    content: "";
+    display: block;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    z-index: 1;
+    top:0;
+    left: 0;
+    background-color: #0D0D0D;
+    backdrop-filter: blur(10px);
+    opacity: .6;
+}

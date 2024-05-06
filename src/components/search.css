@@ -60,3 +60,23 @@
     border-radius: 28px;
     border: 1px solid #E66A63;
 }
+
+.search__button a{
+    position: fixed;
+    bottom: 20px;
+    left: 20px;
+
+    width: 60px;
+    height: 60px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--yelow-color);
+    font-size: 40px;
+    background-color: #544600;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    z-index: 2;
+}

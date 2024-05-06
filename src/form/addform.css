@@ -1,0 +1,56 @@
+.box h2 {
+    margin-top: 15px;
+}
+.box h4 {
+    margin-top: 10px;
+}
+.add__form {
+    position: fixed;
+    z-index: 2;
+    margin-top: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+.box__inner {
+    width: 100%;
+    padding: 10px 20px;
+}
+.box__inner label {
+    margin-top: 10px;
+    display: flex;
+
+    width: 100%;
+}
+.add_input_box {
+    margin-top: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+.add_input_box:nth-child(1) {
+    margin-top: 0;
+}
+.add__form input {
+    background-color: none;
+    border: none;
+    font-size: 15px;
+    outline: none;
+}
+.ingredient {
+    width: 150px;
+}
+.amount {
+    width: 50px;
+}
+#dropdown {
+    width: 50px;
+}
+/* #submit {
+    margin-right: 20px;
+} */
+.add__form label {
+    display: flex;
+}

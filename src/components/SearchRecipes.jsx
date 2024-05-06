@@ -58,11 +58,13 @@ const SearchRecipes = () => {
       {!loading && recipes.length > 0 && (
         <ul className="recipe__list">
           {recipes.map((recipe) => (
-            <div className='recipe__box' key={recipe._id}>
+            <div className='box' key={recipe._id}>
               <h3 className='recipe__box__tittle'>{recipe.dishName}</h3>
               <ul className="ingredient__box">
                 {recipe.ingredients.map((ingredient, i) => (
-                  <li className="ingredients toggle" key={i}>{`${ingredient.name} ${ingredient.amount}${ingredient.unit}`} <input className='checkbox' type='checkbox' /></li>
+                  <li className="ingredients toggle" key={i}>
+                   {`${ingredient.amount ? `${ingredient.amount} ${ingredient.unit}` : ''} ${ingredient.name}`}
+                   <input className='checkbox' type='checkbox' /></li>
                 ))}
               </ul>
             </div>

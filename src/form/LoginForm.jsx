@@ -6,6 +6,7 @@ import URL from '../url';
 const LoginForm = () => {
   const [userName, setUserName] = useState('');
   const [password, setPassword] = useState('');
+  const [loginError, setLoginError] = useState('');
 
   
 
@@ -29,7 +30,11 @@ const handleSubmit = (e) => {
         }
         
     }).catch(err => {
-        console.log(err)
+      if (err.response && err.response.status === 401) {
+        setLoginError('Invalid username or password.');
+      } else {
+        setLoginError('An error occurred. Please try again later.');
+      }
     })
 }
 
@@ -40,13 +45,13 @@ const handleSubmit = (e) => {
     <div className='Login'>
       <h2>Login</h2>
       
-      
+      {loginError && <p className='error__login'>{loginError}</p>}
       <input type="text" value={userName} onChange={(e) => setUserName(e.target.value)} placeholder='User Name' autoComplete="off"/>
       
       
       <input type="password" value={password} onChange={(e) => setPassword(e.target.value)} placeholder='Password'/>
 
-      <button onClick={  handleSubmit}>Sign In</button>
+      <button onClick={handleSubmit}>Sign In</button>
     </div>
   );
 };
